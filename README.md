@@ -1,16 +1,18 @@
-# Haj-Rick
+# Haj-Rick Bot
 
-Haj rick was a stupid but fun idea for a bot and now its just a cool "BOT" for our group [PySpy](https://t.me/pyspy).
-the code is so dirty and needs to be splitted (for easier development) and i will make the code much brighter ASAP.
+__Haj-rick__ is product of a simple but cool idea.
+the code is still __ambiguous__ and but we will try.
 
-### Features:
+### Features :
 * Let me google that for you 
 * Let me stack over flow that for you
 * custom command
 * redirector nonsense message(from main group to "Free-chat") 
-* Status updates auto remover for proper group :)
+* Status auto remover for a proper group :)
 
-### TODO:
-- [ ] rewrite it
-- [ ] split the code
+### TODO :
+- [x] rewrite it
+- [x] split the code
 - [ ] maybe more customizeable ?
+
+I'm grateful for every P.R. or Issue report.
