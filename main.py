@@ -8,7 +8,7 @@ import sqlite3
 
 chat_id = 255877970
 # WARNING MAIN BOTS TOKEN
-token = "1106730830:AAExkgKQFE50Zl5ya-3XmxuOkD-jhDGd-bw"
+token = "TOKEN"
 stack_base_url = "http://lmsotfy.com/?q="
 base_url = "https://lmgtfy.com/?q="
 
