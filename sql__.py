@@ -1,22 +1,29 @@
 import sqlite3
-""" SQLite functions used in ../main.py """
-def insert_qa(c, conn, q, a):
-    c.execute("INSERT OR REPLACE INTO smartq (question, answer) VALUES (?, ?)", (q, a))
-    conn.commit()
 
-def answer_to_q(c, conn, q):
-    c.execute("SELECT answer FROM smartq WHERE question=?", (q,))
-    return c.fetchall()
+class DbManager:
+    def __init__(self, db_name):
+        self.con = sqlite3.connect(db_name, check_same_thread=False)
+        self.c = self.con.cursor()
 
-def all_q_a(c, conn):
-    c.execute("SELECT * FROM smartq")
-    return c.fetchall()
+    def create_table(self):
+        self.c.execute("""CREATE TABLE IF NOT EXISTS smartq (
+                            question VARCHAR(32) NOT NULL PRIMARY KEY,
+                            answer VARCHAR(1024) NOT NULL)""" )
+        self.con.commit()
 
-def delete_q(c, conn, q):
-    c.execute("DELETE FROM smartq WHERE question=?", (q,))
-    conn.commit()
+    def insert_qa(self, q, a):
+        self.c.execute("INSERT OR REPLACE INTO smartq (question, answer) VALUES (?, ?)", (q, a))
+        self.con.commit()
 
-"""Syntax for creating table"""
-table_syntax = """CREATE TABLE IF NOT EXISTS smartq (
-    question VARCHAR(32) NOT NULL PRIMARY KEY,
-    answer VARCHAR(1024) NOT NULL)"""  
+    def answer_to_q(self, q):
+        self.c.execute("SELECT answer FROM smartq WHERE question=?", (q,))
+        return self.c.fetchall()
+
+    def all_q_a(self):
+        self.c.execute("SELECT * FROM smartq")
+        return self.c.fetchall()
+
+    def delete_q(self, q):
+        self.c.execute("DELETE FROM smartq WHERE question=?", (q,))
+        self.con.commit()
+
