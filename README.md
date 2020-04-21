@@ -10,9 +10,4 @@ the code is still __ambiguous__ and but we will try.
 * redirector nonsense message(from main group to "Free-chat") 
 * Status auto remover for a proper group :)
 
-### TODO :
-- [x] rewrite it
-- [x] split the code
-- [ ] maybe more customizeable ?
-
 I'm grateful for every P.R. or Issue report.
