@@ -1,7 +1,7 @@
 chat_id = None # put your own ID here (Integer)
 token = None # your bots toke here (String)
 
-""" Base links for Let Me ... """s
+""" Base links for Let Me ... """
 stack_base_url = "http://lmsotfy.com/?q=" 
 base_url = "https://lmgtfy.com/?q=" 
 
